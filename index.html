@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explora una simulación de detección de madurez de frutillas mediante visión artificial.">
+  <title>StrawberryRipeness AI</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script defer src="script.js"></script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: #071b15;
+    }
+
+    .grid-bg {
+      background-image:
+        linear-gradient(#ffffff06 1px, transparent 1px),
+        linear-gradient(90deg, #ffffff06 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+
+    .float {
+      animation: float 5s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      50% { transform: translateY(-12px); }
+    }
+
+    :focus-visible {
+      outline: 3px solid #6ee7b7;
+      outline-offset: 5px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="text-slate-100 antialiased">
+  <a
+    href="#contenido"
+    class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:bg-emerald-900 focus:p-4"
+  >
+    Saltar al contenido
+  </a>
+
+  <header class="sticky top-0 z-30 border-b border-white/10 bg-[#071b15]/95 backdrop-blur-xl">
+    <nav
+      class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-5"
+      aria-label="Navegación principal"
+    >
+      <a href="#" class="flex items-center gap-2 font-bold tracking-tight">
+        <i data-lucide="sprout" class="text-emerald-400" aria-hidden="true"></i>
+        Strawberry<span class="text-rose-400">AI</span>
+      </a>
+
+      <div class="flex items-center gap-6 text-sm">
+        <a
+          href="#proceso"
+          class="hidden text-slate-300 transition hover:text-white sm:block"
+        >
+          Cómo funciona
+        </a>
+        <a
+          href="#demo"
+          class="rounded-full bg-emerald-400 px-5 py-2 font-semibold text-emerald-950 transition hover:bg-emerald-300"
+        >
+          Probar demo ↗
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <!-- HERO -->
+    <section class="grid-bg relative overflow-hidden">
+      <div class="pointer-events-none absolute -left-40 top-10 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl"></div>
+
+      <div class="relative mx-auto grid max-w-6xl items-center gap-14 px-5 py-20 md:grid-cols-2 md:py-28">
+        <div>
+          <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-emerald-300">
+            <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+            Visión artificial para el campo
+          </p>
+
+          <h1 class="text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+            StrawberryRipeness <span class="text-rose-400">AI</span>
+          </h1>
+
+          <p class="mt-6 text-xl font-medium text-emerald-100">
+            Cada frutilla tiene su momento.
+          </p>
+
+          <p class="mt-4 max-w-lg leading-relaxed text-slate-400">
+            Explora cómo la visión artificial puede ayudar a identificar el
+            estado de maduración de tus frutillas y orientar el monitoreo
+            de la cosecha.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a
+              href="#demo"
+              class="inline-flex items-center gap-2 rounded-xl bg-rose-500 px-6 py-3 font-semibold transition hover:-translate-y-1 hover:bg-rose-400"
+            >
+              <i data-lucide="scan-line" aria-hidden="true"></i>
+              Probar Demo
+            </a>
+
+            <a
+              href="#proceso"
+              class="rounded-xl border border-white/20 px-6 py-3 font-semibold transition hover:bg-white/10"
+            >
+              Saber Más
+            </a>
+          </div>
+
+          <p class="mt-6 text-xs text-slate-400">
+            3 estados de madurez · Demo local · Sin subir imágenes a un servidor
+          </p>
+        </div>
+
+        <div class="float relative rounded-3xl border border-white/10 bg-[#102b22] p-6 shadow-2xl">
+          <div class="mb-6 flex items-center justify-between text-xs uppercase tracking-widest text-slate-400">
+            <span>Vista conceptual</span>
+            <span class="text-emerald-300">● Visión IA</span>
+          </div>
+
+          <div class="relative flex h-64 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-950 to-[#071b15] sm:h-72">
+            <span
+              class="select-none text-[140px]"
+              role="img"
+              aria-label="Frutilla ilustrada"
+            >🍓</span>
+
+            <div class="absolute inset-x-16 inset-y-8 rounded-xl border-2 border-emerald-400/70">
+              <span class="absolute -top-3 left-3 rounded bg-emerald-400 px-2 py-1 text-xs font-bold text-emerald-950">
+                FRUTILLA
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-5 flex items-center justify-between">
+            <div>
+              <p class="text-xs text-slate-400">Ejemplo ilustrativo</p>
+              <p class="mt-1 font-semibold">Óptima / Madura</p>
+            </div>
+            <span class="text-3xl font-bold text-rose-400">100%</span>
+          </div>
+
+          <div class="mt-3 h-2 rounded-full bg-white/10">
+            <div class="h-full rounded-full bg-rose-400"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section id="proceso" class="mx-auto max-w-6xl px-5 py-20">
+      <p class="text-sm font-semibold uppercase tracking-widest text-emerald-400">
+        Del cultivo al dato
+      </p>
+
+      <h2 class="mt-3 text-3xl font-bold sm:text-4xl">
+        Una imagen. Una nueva perspectiva.
+      </h2>
+
+      <p class="mt-4 max-w-2xl text-slate-400">
+        Así sería el flujo de un sistema de visión artificial.
+        En esta demo, el resultado se genera al azar.
+      </p>
+
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1 hover:border-emerald-400/40">
+          <i data-lucide="camera" class="mb-6 text-emerald-400" aria-hidden="true"></i>
+          <p class="text-xs text-slate-500">01 / CAPTURA</p>
+          <h3 class="mt-2 font-semibold">Captura de imagen</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            Obtén una fotografía clara de la frutilla con iluminación uniforme.
+          </p>
+        </article>
+
+        <article class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1 hover:border-emerald-400/40">
+          <i data-lucide="cpu" class="mb-6 text-emerald-400" aria-hidden="true"></i>
+          <p class="text-xs text-slate-500">02 / ANÁLISIS</p>
+          <h3 class="mt-2 font-semibold">Análisis de color por IA</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            Un modelo entrenado podría evaluar patrones visuales y cambios de color.
+          </p>
+        </article>
+
+        <article class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1 hover:border-emerald-400/40">
+          <i data-lucide="scan-eye" class="mb-6 text-rose-400" aria-hidden="true"></i>
+          <p class="text-xs text-slate-500">03 / DIAGNÓSTICO</p>
+          <h3 class="mt-2 font-semibold">Estado de madurez</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            Clasifica en inmadura, maduración media o madura.
+          </p>
+        </article>
+
+        <article class="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition hover:-translate-y-1 hover:border-emerald-400/40">
+          <i data-lucide="chart-no-axes-combined" class="mb-6 text-rose-400" aria-hidden="true"></i>
+          <p class="text-xs text-slate-500">04 / REPORTE</p>
+          <h3 class="mt-2 font-semibold">Reporte en tiempo real</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            Consulta el resultado y una orientación para el seguimiento del cultivo.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- DEMO -->
+    <section id="demo" class="mx-auto max-w-6xl px-5 pb-24">
+      <div class="rounded-3xl border border-emerald-400/20 bg-gradient-to-br from-[#12352a] to-[#0a211a] p-6 sm:p-10">
+        <div class="mb-8 flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-widest text-emerald-400">
+              Pruébalo tú mismo
+            </p>
+            <h2 class="mt-3 text-3xl font-bold">
+              Tu próxima cosecha, en foco.
+            </h2>
+          </div>
+
+          <span class="rounded-full border border-amber-300/30 bg-amber-300/10 px-3 py-1 text-xs text-amber-200">
+            Simulación · Sin modelo de IA
+          </span>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="rounded-2xl border border-dashed border-emerald-300/30 bg-black/10 p-6 text-center">
+            <i data-lucide="image-up" class="mx-auto mb-4 h-10 w-10 text-emerald-300" aria-hidden="true"></i>
+
+            <h3 class="text-lg font-semibold">
+              Subir una foto de una frutilla
+            </h3>
+
+            <p id="file-help" class="mt-2 text-sm text-slate-400">
+              JPG, PNG, WebP o GIF · Máximo 10 MB
+            </p>
+
+            <label
+              for="photo"
+              class="mt-6 inline-block cursor-pointer rounded-xl bg-emerald-400 px-5 py-3 font-semibold text-emerald-950 transition hover:bg-emerald-300"
+            >
+              Seleccionar imagen
+            </label>
+
+            <input
+              id="photo"
+              type="file"
+              accept="image/jpeg,image/png,image/webp,image/gif"
+              aria-describedby="file-help"
+              class="mt-4 block w-full text-sm text-slate-300 file:mr-3 file:rounded-lg file:border-0 file:bg-white/10 file:px-3 file:py-2 file:text-white"
+            >
+
+            <img
+              id="preview"
+              alt="Vista previa de la imagen seleccionada"
+              class="mt-5 hidden max-h-64 w-full rounded-xl object-contain"
+            >
+
+            <p id="error" role="alert" class="mt-3 text-sm text-rose-300"></p>
+          </div>
+
+          <div
+            id="analysis"
+            class="flex min-h-80 flex-col justify-center rounded-2xl border border-white/10 bg-[#071b15]/60 p-6"
+            aria-busy="false"
+          >
+            <div id="idle" class="text-center">
+              <i data-lucide="scan-line" class="mx-auto mb-4 h-10 w-10 text-slate-500" aria-hidden="true"></i>
+              <p class="font-medium">Todo listo para comenzar</p>
+              <p class="mt-2 text-sm text-slate-400">
+                Selecciona una imagen para ver un resultado simulado.
+              </p>
+            </div>
+
+            <div id="loading" class="hidden text-center">
+              <div
+                class="mx-auto mb-5 h-10 w-10 animate-spin rounded-full border-4 border-emerald-400/20 border-t-emerald-400"
+                aria-hidden="true"
+              ></div>
+              <p>Simulando el análisis de la IA…</p>
+            </div>
+
+            <div id="result" class="hidden">
+              <p class="text-xs uppercase tracking-widest text-slate-400">
+                Resultado simulado
+              </p>
+
+              <h3 id="result-title" class="mt-3 text-2xl font-bold"></h3>
+
+              <div class="mt-6 flex justify-between text-sm">
+                <span>Índice ilustrativo de madurez</span>
+                <span id="percentage" class="font-bold"></span>
+              </div>
+
+              <div
+                id="progress"
+                role="progressbar"
+                aria-label="Índice ilustrativo de madurez"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+                class="mt-3 h-3 overflow-hidden rounded-full bg-white/10"
+              >
+                <div
+                  id="bar"
+                  class="h-full rounded-full transition-all duration-700"
+                  style="width: 0%"
+                ></div>
+              </div>
+
+              <p
+                id="recommendation"
+                class="mt-6 rounded-xl bg-white/5 p-4 text-sm leading-relaxed text-slate-300"
+              ></p>
+
+              <button
+                id="retry"
+                type="button"
+                class="mt-5 text-sm font-semibold text-emerald-300 underline underline-offset-4 transition hover:text-emerald-100"
+              >
+                Simular otra vez ↗
+              </button>
+            </div>
+
+            <p id="status" role="status" aria-live="polite" class="sr-only"></p>
+          </div>
+        </div>
+
+        <p class="mt-6 text-xs leading-relaxed text-slate-400">
+          Esta demo no identifica frutillas ni analiza su color: asigna una de
+          tres respuestas aleatorias a cualquier imagen válida. Los porcentajes
+          son ilustrativos, no probabilidades ni mediciones. Las recomendaciones
+          son ejemplos, no decisiones de cosecha.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 px-5 py-8">
+    <div class="mx-auto flex max-w-6xl flex-col justify-between gap-5 text-sm text-slate-400 sm:flex-row">
+      <p>
+        © <span id="year">2026</span> StrawberryRipeness AI.
+        Todos los derechos reservados.
+      </p>
+
+      <nav class="flex flex-wrap gap-5" aria-label="Enlaces de ejemplo">
+        <a href="#" data-placeholder class="transition hover:text-white">Privacidad</a>
+        <a href="#" data-placeholder class="transition hover:text-white">Términos</a>
+        <a href="#" data-placeholder class="transition hover:text-white">Contacto</a>
+      </nav>
+    </div>
+
+    <p
+      id="footer-note"
+      role="status"
+      class="mx-auto mt-3 max-w-6xl text-xs text-emerald-300"
+    ></p>
+  </footer>
+</body>
+</html>
